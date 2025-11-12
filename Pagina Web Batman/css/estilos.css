@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+.navbar-nav {
+  text-align: right;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #f5d142 !important;  /* ejemplo: dorado */
+}
+
+/* 🔹 Cambiar color al pasar el mouse */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff !important;  /* blanco al pasar el mouse */
+}
+
+body {
+  background-color: #000000e7;
+  overflow-x: hidden; /* evita scroll horizontal con Bootstrap */
+}
+
+section, footer, header {
+  background-color: transparent; /* para que tomen el fondo negro del body */
+  border: none;
+}
+
+#Batman h2 {
+  font-size: 35px;
+  color: #e6be00;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#Batman p {
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.carousel-caption {
+  bottom: 30%;
+}
+
+.carousel-caption .titulo {
+  font-size: 80px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 3px 3px 10px rgb(255, 123, 0);
+}
+
+.carousel-caption .subtitulo {
+  font-size: 35px;
+  color: #FFD700;
+  text-shadow: 3px 3px 10px rgb(255, 123, 0);
+}
+
+.carousel-item {
+  transition: transform 0.5s ease;  /* Agrega un efecto suave al cambiar de imagen */
+}
+
+/* 🔹 Banner completo (compatible Bootstrap y mobile) */
+#banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 🔹 Cada item del carousel ocupa toda la altura */
+#banner .carousel-item {
+  height: 100vh;
+  min-height: 600px; /* altura mínima para pantallas medianas */
+}
+
+/* 🔹 Imagen del banner */
+#banner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 🔹 Texto del banner */
+.carousel-caption {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+}
+
+/* Texto igual a tu versión */
+.carousel-caption .titulo {
+  font-size: 80px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 3px 3px 10px rgb(255, 123, 0);
+}
+
+.carousel-caption .subtitulo {
+  font-size: 35px;
+  color: #FFD700;
+  text-shadow: 3px 3px 10px rgb(255, 123, 0);
+}
+
+/* 🔹 En dispositivos móviles */
+@media (max-width: 768px) {
+  #banner .carousel-item {
+    height: 100svh; /* altura real del viewport */
+    min-height: 100svh; /* aseguro altura completa */
+  }
+
+  #banner .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Mostrar el texto también en mobile */
+  .carousel-caption.d-none.d-md-block {
+    display: block !important;
+  }
+
+  .carousel-caption {
+    bottom: 15%;
+    width: 90%;
+    text-align: center;
+  }
+
+  .carousel-caption .titulo {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .carousel-caption .subtitulo {
+    font-size: 22px;
+  }
+}
+
+/* Compatibilidad con secciones Bootstrap */
+.bloque-info {
+  margin-top: 80px;
+  background-color:a(0, 0, 0, 0.7);
+  color: rgb(255, 255, 255);
+}
+
+/* 🔹 Marco dorado para las 3 películas */
+#Peliculas .card {
+  border: 3px solid #FFD700; /* Borde dorado */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px;
+}
+
+#Peliculas {
+margin-bottom: 200px;
+}
+
+/* Efecto al pasar el mouse (opcional pero muy vistoso) */
+#Peliculas .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); /* Brillo dorado */
+}
+
+/* Personajes dentro del collapse */
+#Peliculas .card .collapse img {
+  border: 2px solid #FFD700;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+#Peliculas .card .collapse img:hover {
+  transform: scale(1.1);
+}
+
+
+/* 🔹 SECCIÓN PERSONAJES PRINCIPALES */
+#Personajes {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* Título */
+#Personajes .titulo-nolan {
+  color: #FFD700;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Tarjeta base */
+#Personajes .card {
+  border: 3px solid #FFD700;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Imagen */
+#Personajes .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover en imagen */
+#Personajes .card:hover img {
+  transform: scale(1.1);
+}
+
+/* Descripción */
+#Personajes .descripcion {
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+}
+
+/* Al pasar el mouse, aparece la descripción */
+#Personajes .card:hover .descripcion {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nombre del personaje */
+#Personajes .nombre {
+  font-weight: bold;
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Texto */
+#Personajes .card-text {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #Personajes .card {
+    margin-bottom: 20px;
+  }
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column; /* apila el título arriba y el video abajo */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.video-container iframe {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+}
+
+/* Si querés estilizar el título */
+.titulo-nolan {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 🔹 Estilo para la sección del director */
+.director-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* Título centrado y dorado */
+.titulo-director {
+  color: #FFD700;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Caja del texto con borde y brillo */
+.bio-box {
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 3px solid #FFD700; /* borde completo dorado */
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1em;
+  line-height: 1.8;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto hover igual que la imagen */
+.bio-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+}
+
+/* Imagen con borde y brillo */
+.shadow-img {
+  border: 3px solid #FFD700;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shadow-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+}
+
+
+/* 🔹 Sección Opiniones con estilo tipo "pastillas" */
+#Opiniones .col-md-3 {
+  background-color: rgba(25, 25, 25, 0.9); /* fondo oscuro translúcido */
+  border: 2px solid #FFD700; /* borde dorado */
+  border-radius: 25px; /* bordes redondeados tipo pastilla */
+  padding: 25px 15px;
+  margin: 20px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15); /* leve brillo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+#Opiniones .col-md-3:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* 🔸 Imagen de cada fan */
+.foto-fan {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* formato circular */
+  border: 3px solid #FFD700;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-fan:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* 🔸 Comentario y nombre */
+.comentario {
+  color: #ffffff;
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.nombre-fan {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* 🔸 Espaciado general */
+#Opiniones {
+  margin-top: 180px;
+  text-align: center;
+}
+
+/* 🔹 SECCIÓN NOTICIAS */
+#Noticias {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: white;
+  text-align: center;
+}
+
+#Noticias .titulo-nolan {
+  color: #FFD700;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.4);
+}
+
+/* 🔹 Tarjetas de noticias estilo Bootstrap */
+#Noticias .card {
+  border: 2px solid #FFD700; /* borde dorado */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Imagen dentro de la tarjeta */
+#Noticias .card img {
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Hover con efecto de brillo */
+#Noticias .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Texto interno */
+#Noticias .card-title {
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 1px 1px 8px rgba(255, 215, 0, 0.3);
+}
+
+#Noticias .card-text {
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #Noticias .card img {
+    height: 200px;
+  }
+}
+
+/* 🔹 Formulario de contacto (mantiene tu estética) */
+#Contacto form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Etiquetas */
+#Contacto label {
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Campos de texto */
+#Contacto input,
+#Contacto textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #FFD700;
+  color: white;
+  border-radius: 5px;
+}
+
+#Contacto input:focus,
+#Contacto textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  border-color: #FFD700;
+}
+
+/* Botón */
+#Contacto .btn {
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#Contacto .btn:hover {
+  background-color: #e6be00;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #Contacto form {
+    width: 90%;
+  }
+}
+
+/* 🔹 Unificar todos los títulos principales como Biografía */
+#Batman h2,
+#Peliculas h2,
+.video-container h2,
+#Director h2,
+#Opiniones h2,
+#Contacto h2 {
+    color: #FFD700;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+
+.footer {
+    background-color: #FFD700; /* dorado */
+    color: #000; /* texto negro para contraste */
+    padding: 20px 0;
+}
+
+/* Estilo de los datos del footer */
+.footer .datos ul {
+    padding: 0;
+    margin: 0 0 15px 0;
+    list-style: none;
+}
+
+.footer .datos li {
+    margin: 5px 0;
+}
+
+/* Estilo de los íconos de redes sociales */
+.footer .redes a {
+    margin: 0 10px;
+    color: #000; /* íconos en negro para contraste */
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer .redes a:hover {
+    color: #fff; /* cambio de color al pasar el mouse */
+}
